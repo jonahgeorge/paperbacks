@@ -7,15 +7,15 @@ class Book < ActiveRecord::Base
   has_many :listings
   
   scope :with_title, ->(title) {
-    # where('name LIKE ?', "%#{name}%")
+    where('title LIKE ?', "%#{name}%")
   }
   
-  # def active_listings
-  #
-  # end
-  #
-  # def inactive_listings
-  #
-  # end
+  def active_listings
+    self.listings.where(is_active: true)
+  end
+ 
+  def inactive_listings
+    self.listings.where(is_active: false)
+  end
   
 end
