@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$RAILS_ENV" != "production" ]; then
+  bundle exec rails s -p $PORT
+else
+  bundle exec unicorn -p $PORT -c ./config/unicorn.rb
+fi
