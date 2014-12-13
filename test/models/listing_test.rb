@@ -9,7 +9,8 @@ class ListingTest < ActiveSupport::TestCase
     should validate_presence_of(:user)
     should validate_presence_of(:book)
     should validate_presence_of(:price)
-    
+    should validate_numericality_of(:price).is_greater_than_or_equal_to(0)
+
   end
 
 end
