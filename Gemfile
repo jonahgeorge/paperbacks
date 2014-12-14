@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'shoulda', group: [ :test, :development ]
 
 # Use jquery as the JavaScript library
