@@ -9,3 +9,8 @@ script:
 after_failure:
   - "echo $RAILS_ENV"
   - "bundle exec rake --version"
+
+
+addons:
+  code_climate:
+    repo_token: 913b7d25dd708b4742b6aa5467eb7f65550bd9a56289f1791cd0e5efb4fd0294
