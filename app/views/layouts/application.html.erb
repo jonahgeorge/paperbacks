@@ -1,14 +1,92 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Paperbacks</title>
-  <%= stylesheet_link_tag    'application', media: 'all'  %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= content_for?(:title) ? yield(:title) : "Paperbacks" %></title>
 
-<%= yield %>
+    <script src="//use.edgefonts.net/source-sans-pro:n3,n4,n6,i3,i4;source-code-pro:n4.js"></script>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body id="home">
+
+    <div id="header-wrapper">
+      <div id="header" class="row">
+        <div class="large-12 columns clearfix">
+          <h1 class="brackets-logo">
+            <a href="/">Paperbacks</a>
+          </h1>
+          <div class="mobile-nav">
+            <a id="hamburger" href="#">Menu</a>
+          </div>
+          <div class="nav clearfix">
+            <div class="nav-links">
+              <a href="/listings">Explore</a>
+              <a href="/join">Join</a>
+              <a href="/login">Log In</a>
+            </div>
+            <div class="social-links">
+              <a class="social-links-item github-icon" href="https://www.github.com/jonahgeorge/paperbacks" title="GitHub">GitHub</a>
+              <a class="social-links-item twitter-icon" href="https://twitter.com/getpaperbacks" title="Twitter">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= yield %>
+
+    <div id="footer-wrapper">
+      <div id="footer" class="row">
+          <div class="medium-6 large-4 columns">
+              <h5>Quick Links</h5>
+              <ul>
+                  <li>
+                      <a href="https://github.com/jonahgeorge/paperbacks">Source Code on Github</a>
+                  </li>
+                  <!--
+                  <li>
+                      <a href="docs/current/modules/brackets.html">API Documentation</a>
+                  </li>
+                  -->
+                  <li>
+                      <a href="https://github.com/jonahgeorge/paperbacks/wiki">Wiki</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="medium-6 large-4 columns">
+              <h5 id="contribute">Get Involved</h5>
+              <ul>
+                  <li>
+                      <a href="https://github.com/adobe/brackets/wiki/Suggest-a-Feature">Suggest a Feature</a>
+                  </li>
+                  <li>
+                      <a href="https://github.com/adobe/brackets/issues">Checkout Current Issues on GitHub</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="medium-6 large-4 columns">
+              <h5>Keep in Touch</h5>
+              <ul>
+                  <li>
+                      <a href="https://twitter.com/getpaperbacks">Twitter</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <div id="about" class="row">
+        <div class="large-12 columns">
+            <p>Paperbacks was founded by <a href="https://twitter.com/jonahgeorge">Jonah George</a> as a community guided, open source project.<br>Paperbacks is released under the <a href="https://github.com/jonahgeorge/paperbacks/blob/master/LICENSE">MIT License</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

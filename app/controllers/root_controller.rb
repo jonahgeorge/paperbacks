@@ -1,2 +1,6 @@
-class RootController < ApplicationController  
+class RootController < ApplicationController
+
+  def index
+  end
+
 end
