@@ -1,0 +1,160 @@
+
+header {
+    // background: #fb2d26;
+    background: $purple;
+    padding: 40px 0;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+header:before,
+header:after {
+    content: " ";
+    display: table;
+}
+
+header:after {
+    clear: both;
+}
+
+header:before,
+header:after {
+    content: " ";
+    display: table;
+}
+
+header:after {
+    clear: both;
+}
+
+header a,
+header a:hover {
+    font-weight: 500;
+    color: #fff;
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo span {
+    font-size: 30px;
+}
+
+header .user-nav {
+    padding-left: 0;
+    list-style: none;
+    float: right;
+    margin: 5px 0 0;
+}
+
+header .user-nav li {
+    float: left;
+    margin-left: 30px;
+}
+
+header .user-nav li.divider {
+    width: 1px;
+    height: 18px;
+    background: #f1f4f7;
+}
+
+header .cta {
+    font-weight: 500;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    padding: 6px 16px;
+    border-radius: 4px;
+    position: relative;
+    top: -1px;
+}
+
+header.home {
+    margin-bottom: 0;
+}
+
+header .dropdown-toggle {
+    padding: 3px;
+}
+
+header .dropdown {
+    position: relative;
+    top: -2px;
+}
+
+header .dropdown .avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+}
+
+header .dropdown-menu {
+    right: 2px;
+    left: auto;
+    padding: 5px 0;
+    border: 0;
+    top: 32px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+header .dropdown-menu li {
+    margin: 0;
+    float: none;
+}
+
+header .dropdown-menu li.divider {
+    height: 2px;
+    background: #f1f2f3;
+    width: 100%;
+    margin: 4px 0;
+}
+
+header .dropdown-menu a:hover {
+    font-weight: 400;
+}
+
+
+header.javascript {
+    background: #f8dc3c;
+    margin-bottom: 0;
+}
+
+header.javascript .divider {
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+header.javascript a {
+    color: #333;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+header.javascript .cta {
+    border-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+header.python {
+    background: #f1f9ff;
+    margin-bottom: 0;
+}
+
+header.python .divider {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+header.python a {
+    color: #333;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+header.python .cta {
+    border-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+header.php {
+    background: #5f81ba;
+    margin-bottom: 0;
+}
+
+header.ruby {
+    background: #d91304;
+    margin-bottom: 0;
+}
