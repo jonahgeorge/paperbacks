@@ -1,0 +1,54 @@
+<div id="content-wrapper">
+
+<div class="row">
+  <div class="large-12 columns">
+    <% @user.errors.full_messages.each do |message| %>
+      <div class="alert-box warning" data-alert>
+        <%= message %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
+
+    <section class="box">
+      <%= form_for @user, url: "/join", method: "post" do |f| %>
+
+        <div class="box--header">
+          <h4>Sign Up</h4>
+        </div>
+
+        <div class="box--content">
+          <div class="row">
+            <div class="large-6 large-centered columns">
+              <label>Name
+                <%= f.text_field :name %>
+              </label>
+            </div>
+
+            <div class="large-6 large-centered columns">
+              <label>Email Address
+                <%= f.email_field :email, :"aria-describedby" => "emailHelpText" %>
+              </label>
+            </div>
+
+            <div class="large-6 large-centered columns">
+              <label>Password
+                <%= f.password_field :password %>
+              </label>
+            </div>
+
+            <div class="large-6 large-centered columns">
+              <%= f.submit "Sign Up", class: "button tiny radius" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="box--footer">
+          <span>Already have an account? <a href="/login">Log in</a></span>
+        </div>
+
+      <% end %>
+    </section>
+  </div>
+</div>
+
+</div>
