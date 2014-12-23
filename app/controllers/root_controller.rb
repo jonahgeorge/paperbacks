@@ -1,7 +1,7 @@
 class RootController < ApplicationController
 
   # GET /
-  def index
+  def home
   end
 
 end

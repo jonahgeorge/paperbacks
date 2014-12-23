@@ -4,9 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= content_for?(:title) ? yield(:title) : "Paperbacks" %></title>
-
-    <script src="//use.edgefonts.net/source-sans-pro:n3,n4,n6,i3,i4;source-code-pro:n4.js"></script>
-
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -14,18 +11,16 @@
 
   <body>
 
-    <header class="home">
+    <header class="<%= controller.action_name %>">
         <div class="container">
-            <a href="/" class="logo"><span class="icon-logo"></span></a>
+            <a href="/" class="logo">Paperbacks</a>
             <ul class="user-nav">
-                <li class="hidden-xs"><a href="https://www.getsentry.com/pricing/" class="pricing-link">Pricing</a></li>
-                <li class="hidden-xs"><a href="https://www.getsentry.com/guide/">Documentation</a></li>
-                <li class="hidden-xs"><a href="http://blog.getsentry.com">Blog</a></li>
-
-                  <li><a href="https://www.getsentry.com/login/">Sign in</a></li>
-                  <li class="divider"></li>
-                  <li><a href="https://www.getsentry.com/pricing/" class="cta">Get Started</a></li>
-
+                <li class="hidden-xs"><a href="/listings" class="pricing-link">Browse</a></li>
+                <!-- <li class="hidden-xs"><a href="#">Documentation</a></li> -->
+                <!-- <li class="hidden-xs"><a href="http://blog.paperbacks.io">Blog</a></li> -->
+                <li><a href="/login">Sign in</a></li>
+                <li class="divider"></li>
+                <li><a href="/signup" class="cta">Get Started</a></li>
             </ul>
         </div>
     </header>
@@ -36,41 +31,50 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
+                    <!--
                     <h4>Quick Links</h4>
+                    -->
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-3 pull-right">
                     <ul class="services list-unstyled">
-                        <li class="twitter align-right"><a href="http://twitter.com/getsentry">Twitter</a></li>
-                        <li class="github align-right"><a href="https://github.com/getsentry/sentry">GitHub</a></li>
-                        <li class="dribbble align-right"><a href="http://dribbble.com/ckj/projects/80366-Sentry">Dribbble</a></li>
+                        <li class="twitter align-right"><a href="http://twitter.com/getpaperbacks">Twitter</a></li>
+                        <li class="github align-right"><a href="https://github.com/jonahgeorge/paperbacks">GitHub</a></li>
+                        <!-- <li class="github align-right"><a href="">Facebook</a></li> -->
+                        <!-- <li class="dribbble align-right"><a href="http://dribbble.com/ckj/projects/80366-Sentry">Dribbble</a></li> -->
                     </ul>
-                    <p class="copyright align-right"><small>© 2014 GetSentry.com</small></p>
+                    <p class="copyright align-right"><small>© 2015 Paperbacks.io</small></p>
                 </div>
                 <div class="col-sm-3">
+                    <!--
                     <ul class="list-unstyled">
                         <li><a href="https://www.getsentry.com/pricing/">Plans and Pricing</a></li>
                         <li><a href="http://blog.getsentry.com/">Blog</a></li>
                         <li><a href="https://www.getsentry.com/guide/">Docs</a></li>
                         <li><a href="http://status.getsentry.com/">Service Status</a></li>
                     </ul>
+                    -->
                 </div>
                 <div class="col-sm-3">
+                  <!--
                     <ul class="list-unstyled">
                         <li><a href="https://www.getsentry.com/about/">About Us</a></li>
                         <li><a href="https://www.getsentry.com/privacy/">Privacy Policy</a></li>
                         <li><a href="https://www.getsentry.com/terms/">Terms of Service</a></li>
                         <li><a href="https://www.getsentry.com/thanks/">Thank Yous</a></li>
                     </ul>
+                  -->
                 </div>
                 <div class="col-sm-3">
+                  <!--
                     <ul class="list-unstyled">
                         <li><a href="https://www.getsentry.com/for/javascript/" title="JavaScript Error Tracking">JavaScript</a></li>
                         <li><a href="https://www.getsentry.com/for/ruby/" title="Ruby Error Tracking">Ruby</a></li>
                         <li><a href="https://www.getsentry.com/for/python/" title="Python Error Tracking">Python</a></li>
                         <li><a href="https://www.getsentry.com/for/php/" title="PHP Error Tracking">PHP</a></li>
                     </ul>
+                  -->
                 </div>
             </div>
         </div>

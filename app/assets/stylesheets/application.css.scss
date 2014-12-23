@@ -7,6 +7,16 @@
     -moz-box-sizing: border-box;
 }
 
+.logo {
+  h1 {
+    img {
+      height: 45px;
+      display: inline-block;
+    }
+    font-size: 24px;
+  }
+}
+
 body {
     font-family: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
     font-size: 16px;

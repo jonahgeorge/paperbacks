@@ -2,14 +2,14 @@ require 'test_helper'
 
 class RootControllerTest < ActionController::TestCase
 
-  context "on GET to :index" do
+  context "on GET to :home" do
 
     setup do
-      get :index
+      get :home
     end
 
     should respond_with :success
-    should render_template :index
+    should render_template :home
     should_not set_the_flash
 
   end
