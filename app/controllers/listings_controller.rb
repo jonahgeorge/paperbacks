@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   # GET /listings
   def index
-    unless params[:search].blank?
+    if params[:search].present?
       @books = Book.with_title(params[:search])
     else
       @books = Book.with_title("")
