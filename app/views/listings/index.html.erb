@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <form action="/listings" method="GET">
+        <input type="text" class="form-control" name="search" placeholder="Search by Title" value="<%= params[:search] %>">
+      </form>
+
+      <hr>
+
+      <div class="list-group">
+      <% @books.each do |book| %>
+        <% book.active_listings.each do |listing| %>
+          <%= link_to listing, class: "list-group-item listings-wrapper" do %>
+            <%= content_tag :div, listing.book.title, class: "title" %>
+            <%= content_tag :div, number_to_currency(listing.price, :unit => "$"), class: "price" %>
+            <%= content_tag :div, listing.user.name,  class: "seller" %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
