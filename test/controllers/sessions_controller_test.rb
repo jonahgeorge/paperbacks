@@ -14,10 +14,15 @@ class SessionsControllerTest < ActionController::TestCase
 
   context "when a user enters a blank email" do
     setup do
-      user = User.create(name: "Jonah", email: "jonah@paperbacks.io", password: "keyboardcat")
+      user = User.create(
+        name: "Jonah",
+        email: "jonah@paperbacks.io",
+        password: "keyboardcat"
+      )
+
       user.save
 
-      post :create, { email: "", password: "keyboardcat" }
+      post :create, email: "", password: "keyboardcat"
     end
 
     should render_template :new
@@ -27,10 +32,15 @@ class SessionsControllerTest < ActionController::TestCase
 
   context "when a user enters a blank password" do
     setup do
-      user = User.create(name: "Jonah", email: "jonah@paperbacks.io", password: "keyboardcat")
+      user = User.create(
+        name: "Jonah",
+        email: "jonah@paperbacks.io",
+        password: "keyboardcat"
+      )
+
       user.save
 
-      post :create, { name: "Jonah", email: "jonah@paperbacks.io" }
+      post :create, name: "Jonah", email: "jonah@paperbacks.io"
     end
 
     should render_template :new
@@ -43,7 +53,7 @@ class SessionsControllerTest < ActionController::TestCase
       user = User.create(name: "Jonah", email: "jonah@paperbacks.io", password: "keyboardcat")
       user.save
 
-      post :create, { email: "jonah@paperbacks.io", password: "keyboardcat" }
+      post :create, email: "jonah@paperbacks.io", password: "keyboardcat"
     end
 
     should redirect_to "/"
@@ -56,7 +66,7 @@ class SessionsControllerTest < ActionController::TestCase
       user = User.create(name: "Jonah", email: "jonah@paperbacks.io", password: "keyboardcat")
       user.save
 
-      post :create, { email: "jonah@paperbacks.io", password: "keyboardcat" }
+      post :create, email: "jonah@paperbacks.io", password: "keyboardcat"
       get :destroy
     end
 

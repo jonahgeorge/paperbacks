@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   # GET /login
   def new
   end
@@ -10,12 +9,14 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, :notice => "Logged in!"
+
+      flash[:success] = "Logged in!"
+      redirect_to root_url
     elsif user
-      flash.now.alert = "Invalid password"
+      flash.now[:alert] = "Invalid password"
       render "new"
     else
-      flash.now.alert = "Invalid email"
+      flash.now[:alert] = "Invalid email"
       render "new"
     end
   end
@@ -26,5 +27,4 @@ class SessionsController < ApplicationController
 
     redirect_to root_url
   end
-
 end
