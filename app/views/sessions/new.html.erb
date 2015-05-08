@@ -1,39 +1,20 @@
-<%= render "flash" %>
-
-<section id="content" class="content">
-
-    <div class="container signin border-top">
-        <div class="row">
-            <div class="col-xs-5">
-
-                <h2>Login</h2>
-
-                <%= form_tag url: "/login", method: "post", class: "form-horizontal" do |f| %>
-
-                  <div class="form-group control-group">
-                    <label>Email</label>
-                    <div class="controls">
-                        <%= email_field_tag :email %>
-                    </div>
-                  </div>
-
-                  <div class="form-group control-group">
-                    <label>Password</label>
-                    <div class="controls">
-                      <%= password_field_tag :password %>
-                    </div>
-                  </div>
-
-                  <%= submit_tag "Login", class: "btn btn-small btn-primary" %>
-
-                <% end %>
-
-                <br>
-
-                <span>Don't have an account yet? <a href="/signup">Sign up</a></span>
-
-            </div>
-        </div>
+<div class="col-sm-offset-3 col-sm-6">
+  <h2>Login</h2>
+  <%= form_tag url: "/login", method: "post", class: "form-horizontal" do |f| %>
+    <div class="form-group control-group">
+      <label>Email</label>
+      <div class="controls">
+        <%= email_field_tag :email, nil, class: "form-control" %>
+      </div>
     </div>
-
-</section>
+    <div class="form-group control-group">
+      <label>Password</label>
+      <div class="controls">
+        <%= password_field_tag :password, nil, class: "form-control" %>
+      </div>
+    </div>
+    <%= submit_tag "Login", class: "btn btn-small btn-primary" %>
+  <% end %>
+  <br>
+  <span>Don't have an account yet? <a href="/signup">Sign up</a>.</span>
+</div>

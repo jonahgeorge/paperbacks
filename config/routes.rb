@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: "home#index"
 
   get "/signup" => "users#new"
@@ -10,5 +9,4 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
 
   resources :listings
-
 end
