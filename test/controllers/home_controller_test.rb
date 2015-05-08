@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RootControllerTest < ActionController::TestCase
+class HomeControllerTest < ActionController::TestCase
 
   context "on GET to :home" do
 

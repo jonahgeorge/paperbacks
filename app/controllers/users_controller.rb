@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-  # GET /join
   def new
     @user = User.new
   end
@@ -34,5 +32,4 @@ class UsersController < ApplicationController
   def user_params
     params[:user].permit(:name, :email, :password)
   end
-
 end
