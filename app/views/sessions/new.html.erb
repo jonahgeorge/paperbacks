@@ -13,7 +13,10 @@
         <%= password_field_tag :password, nil, class: "form-control" %>
       </div>
     </div>
-    <%= submit_tag "Login", class: "btn btn-small btn-primary" %>
+    <div class="form-group">
+      <%= submit_tag "Login", class: "btn btn-small btn-primary rmarg10" %>
+      <%= link_to "Cancel", root_path %>
+    </div>
   <% end %>
   <br>
   <span>Don't have an account yet? <a href="/signup">Sign up</a>.</span>

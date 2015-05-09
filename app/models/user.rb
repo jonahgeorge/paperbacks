@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_secure_password
 
   validates_presence_of :name
@@ -27,13 +26,10 @@ class User < ActiveRecord::Base
 
   def generate_email_token
     token = nil
-
     loop do
       token = Digest::SHA1.hexdigest([Time.now, rand].join)
       break if User.where(email_token: token).count == 0
     end
-
     self.email_token = token
   end
-
 end

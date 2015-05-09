@@ -1,0 +1,8 @@
+<p>Hey <%= @user.name %>, please verify your email address!</p>
+
+<p>
+  Someone (hopefully you) has used this email at Paperbacks.
+  Please click the link below to verify your ownership of this email for the account, <%= @user.name %>.
+</p>
+
+<%= link_to root_path, root_path %>

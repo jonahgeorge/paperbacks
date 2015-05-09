@@ -3,28 +3,17 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # POST /join
   def create
     @user = User.new(user_params)
 
-    begin
-      if @user.save
-        session[:user_id] = @user.id
-        flash[:success] = "Welcome to Paperbacks!"
-        redirect_to root_path
-        return
-      else
-        render 'new'
-        return
-      end
-    rescue
-      flash[:error] = "An internal error occured, but don't worry!"
+    if @user.save
+      UserMailer.welcome_email(@user).deliver_later
+      session[:user_id] = @user.id
+      flash[:success] = "Welcome to Paperbacks!"
       redirect_to root_path
-      return
+    else
+      render "new"
     end
-
-    redirect_to root_path
-    return
   end
 
   private
