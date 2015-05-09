@@ -1,14 +1,13 @@
-<!--
-<% @user.errors.full_messages.each do |message| %>
-  <div class="alert-box warning" data-alert>
-    <%= message %>
-    <a href="#" class="close">&times;</a>
-  </div>
-<% end %>
--->
 <%= render "flash" %>
 <div class="col-sm-offset-3 col-sm-6">
   <h2>Sign Up</h2>
+  <% unless @user.errors.empty? %>
+  <div class="alert alert-danger" role="alert">
+    <% @user.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+  <% end %>
   <%= form_for @user, url: "/signup", method: "post", class: "form-horizontal" do |f| %>
     <div class="form-group control-group">
       <label>Preferred Name</label>
@@ -30,6 +29,11 @@
       <div class="controls">
         <%= f.password_field :password, class: "form-control" %>
       </div>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> I agree to the Paperbacks <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+      </label>
     </div>
     <div class="form-group">
       <%= f.submit "Sign Up", class: "btn btn-small btn-primary rmarg10" %>
