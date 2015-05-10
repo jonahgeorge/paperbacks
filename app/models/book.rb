@@ -3,6 +3,7 @@ class Book < ActiveRecord::Base
   validates_presence_of :isbn
   validates_uniqueness_of :isbn
 
+  belongs_to :section
   has_many :listings
 
   scope :with_title, ->(title) {
