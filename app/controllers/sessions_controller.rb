@@ -9,11 +9,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       flash[:success] = "Logged in!"
       redirect_to root_url
-    elsif user
-      flash.now[:alert] = "Invalid password"
-      render "new"
     else
-      flash.now[:alert] = "Invalid email"
+      flash.now[:danger] = "Invalid email or password"
       render "new"
     end
   end
