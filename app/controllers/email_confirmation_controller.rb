@@ -12,7 +12,7 @@ class EmailConfirmationController < ApplicationController
         redirect_to root_path
       else
         flash.now[:danger] = "That token is invalid"
-        redirect_to confirm_path
+        render "show"
       end
     end
   end
