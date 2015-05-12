@@ -1,4 +1,3 @@
-<%= render "flash" %>
 <div class="col-sm-offset-3 col-sm-6">
   <h2>Sign Up</h2>
   <% unless @user.errors.empty? %>
@@ -32,7 +31,7 @@
     </div>
     <div class="checkbox">
       <label>
-        <input type="checkbox"> I agree to the Paperbacks <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+        <%= f.check_box :terms_of_service %> I agree to the Paperbacks <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
       </label>
     </div>
     <div class="form-group">

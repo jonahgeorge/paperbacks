@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
   validates_uniqueness_of :email_token, allow_nil: true
+  validates_acceptance_of :terms_of_service
 
   before_create :generate_email_token
 
