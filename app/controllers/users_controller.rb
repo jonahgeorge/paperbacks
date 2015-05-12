@@ -8,9 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       UserMailer.welcome_email(@user).deliver_later
-      session[:user_id] = @user.id
-      flash[:success] = "Welcome to Paperbacks!"
-      redirect_to root_path
+      redirect_to confirm_path
     else
       render "new"
     end

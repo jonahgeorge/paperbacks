@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :email
   validates_uniqueness_of :email
-  validates_uniqueness_of :email_token, allow_nil: true
+  validates_uniqueness_of :token, allow_nil: true
   validates_acceptance_of :terms_of_service
 
-  before_create :generate_email_token
+  before_create :generate_token
 
   has_many :listings
 
@@ -25,12 +25,12 @@ class User < ActiveRecord::Base
 
   private
 
-  def generate_email_token
+  def generate_token
     token = nil
     loop do
       token = Digest::SHA1.hexdigest([Time.now, rand].join)
-      break if User.where(email_token: token).count == 0
+      break if User.where(token: token).count == 0
     end
-    self.email_token = token
+    self.token = token
   end
 end

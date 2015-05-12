@@ -1,6 +1,6 @@
-Welcome to example.com, <%= @user.name %>
-===============================================
+Hey <%= @user.name %>, please verify your email address!
 
-You have successfully signed up to example.com.
-To login to the site, just follow this link
-Thanks for joining and have a great day!
+Someone (hopefully you) has used this email at Paperbacks.
+Please click the link below to verify your ownership of this email.
+
+<%= link_to confirm_path(token: @user.token), confirm_path(token: @user.token) %>

@@ -2,7 +2,7 @@
 
 <p>
   Someone (hopefully you) has used this email at Paperbacks.
-  Please click the link below to verify your ownership of this email for the account, <%= @user.name %>.
+  Please click the link below to verify your ownership of this email.
 </p>
 
-<%= link_to root_path, root_path %>
+<%= link_to confirm_path(token: @user.token), confirm_path(token: @user.token) %>
