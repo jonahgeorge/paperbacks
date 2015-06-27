@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem "rspec-rails", :group => [:development, :test]
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'autoprefixer-rails'
