@@ -1,23 +1,22 @@
 sudo: false
 language: ruby
-
 rvm:
-  - 2.2.1
-
+- 2.2.1
 before_script:
-  - psql -c 'create database paperbacks_test;' -U postgres
-
+- psql -c 'create database paperbacks_test;' -U postgres
 script:
-  - bundle exec rake db:schema:load
-  - bundle exec rake spec
-
+- bundle exec rake db:schema:load
+- bundle exec rake spec
 after_failure:
-  - "echo $RAILS_ENV"
-  - "bundle exec rake --version"
-
+- echo $RAILS_ENV
+- bundle exec rake --version
 env:
 - DATABASE_URL="postgres://postgres:@localhost/paperbacks_test"
-
 addons:
   code_climate:
     repo_token: 913b7d25dd708b4742b6aa5467eb7f65550bd9a56289f1791cd0e5efb4fd0294
+deploy:
+  provider: heroku
+  master: paperbacks 
+  api_key:
+    secure: CEU7dWldr/FlSOnT0ta5BglntzB3hlNVtVwNGnOdHWNS5mOLbhbFwpYK846xINElnPC4s8bZ/XZzsmM6euYZ5O/Z83iRJal8s6Vr7LWg6T1+HSdVL7qO42tLMTKl3eQJXObwo2E4wkOxq9lfYfTts+GEBpAAk5PEig7PkOTm6qE=
