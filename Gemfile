@@ -17,9 +17,10 @@ group :production do
 end
 
 group :development, :test do
-  gem "codeclimate-test-reporter", require: nil
-  gem "rspec-rails"
-  gem "factory_girl_rails"
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'dotenv-rails'
 end
 
 group :development do

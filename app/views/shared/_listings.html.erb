@@ -1,0 +1,20 @@
+<table class='table'>
+  <thead>
+    <th>Title</th>
+    <th>Seller</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.book.title %></td>      
+        <td><%= listing.user.name %></td>      
+        <td>
+          <%= mail_to listing.user.email, :class => 'btn btn-default btn-xs' do %>
+            <%= number_to_currency(listing.price) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

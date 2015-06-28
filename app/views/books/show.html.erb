@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class='col-sm-3'>
+  <img class="img-responsive hidden-xs" src="http://placehold.it/200x300">
+  <h4><%= @book.title %></h4>
+  <p><%= @book.author %></p>
+</div>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<div class='col-sm-9'>
+  <%= render "shared/listings" %> 
+</div>

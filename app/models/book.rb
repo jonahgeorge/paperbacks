@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
   has_many :listings
 
   scope :with_title, ->(title) {
-    where("title LIKE ?", "%#{title}%")
+    where("LOWER(title) LIKE LOWER(?)", "%#{title}%")
   }
 
   def active_listings
