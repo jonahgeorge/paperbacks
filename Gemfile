@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'bcrypt', '~> 3.1.7'
+gem 'possessive'
 
 group :production do
   # gem 'unicorn'

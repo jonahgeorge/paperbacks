@@ -1,0 +1,4 @@
+<div class='col-sm-12'>
+  <h4><%= @user.name.possessive %> Listings</h4>
+  <%= render partial: "shared/listings", :locals => { :hide_seller => true } %>
+</div>

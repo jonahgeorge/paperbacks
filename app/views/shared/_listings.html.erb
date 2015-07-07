@@ -1,16 +1,24 @@
 <table class='table'>
   <thead>
-    <th>Title</th>
-    <th>Seller</th>
+    <th></th>
+    <th>Book</th>
+    <% unless defined? hide_seller and hide_seller %>
+      <th>Seller</th>
+    <% end %>
+    <th>Last Updated</th>
     <th>Price</th>
   </thead>
   <tbody>
-    <% @listings.each do |listing| %>
+    <% @listings.each_with_index do |listing, index| %>
       <tr>
-        <td><%= listing.book.title %></td>      
-        <td><%= listing.user.name %></td>      
+        <td><%= index+1 %></td>
+        <td><%= link_to listing.book.title, listing.book %></td>
+        <% unless defined? hide_seller and hide_seller %>
+          <td><%= link_to listing.user.name, listing.user %></td>
+        <% end %>
+        <td><%= time_ago_in_words listing.updated_at %> ago</td>
         <td>
-          <%= mail_to listing.user.email, :class => 'btn btn-default btn-xs' do %>
+          <%= mail_to listing.user.email, :class => 'btn btn-default btn-xs', :type => 'button' do %>
             <%= number_to_currency(listing.price) %>
           <% end %>
         </td>
@@ -18,3 +26,26 @@
     <% end %>
   </tbody>
 </table>
+
+<% if false %>
+  <!--
+  Placeholder for advanced functionality in button dropdown
+  Report listing / Add to wishlist / etc
+  -->
+  <div class='btn-group'>
+    <%= mail_to listing.user.email, :class => 'btn btn-default btn-xs', :type => 'button' do %>
+      <%= number_to_currency(listing.price) %>
+    <% end %>
+    <button type='button' class='btn btn-default btn-xs dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+      <span class='caret'></span>
+      <span class='sr-only'>Toggle Dropdown</span>
+    </button>
+    <ul class='dropdown-menu'>
+      <li><a href='#'>Action</a></li>
+      <li><a href='#'>Another action</a></li>
+      <li><a href='#'>Something else here</a></li>
+      <li role='separator' class='divider'></li>
+      <li><a href='#'>Separated link</a></li>
+    </ul>
+  </div>
+<% end %>

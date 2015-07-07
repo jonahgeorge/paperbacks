@@ -88,6 +88,7 @@ GEM
       rack
       rake (>= 0.8.1)
     pg (0.17.1)
+    possessive (1.0.1)
     postmark (1.5.0)
       json
       rake
@@ -194,6 +195,7 @@ DEPENDENCIES
   jquery-rails
   passenger
   pg
+  possessive
   postmark-rails
   rails (= 4.2)
   rails_12factor

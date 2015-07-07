@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @listings = @user.active_listings
+  end
+
   private
 
   def user_params
