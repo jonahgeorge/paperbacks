@@ -1,6 +1,9 @@
 <h3>Showing results for '<%= params[:name] %>'</h3>
 <hr>
 
+<h4>Listings</h4>
+<%= render "shared/listings" %>
+
 <h4>Books</h4>
 <div class='flex-row'>
   <% @books.each do |book| %>
@@ -11,5 +14,4 @@
   <% end %>
 </div>
 
-<h4>Listings</h4>
-<%= render "shared/listings" %> 
+

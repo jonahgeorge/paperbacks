@@ -1,11 +1,11 @@
 class ListingsController < ApplicationController
-  def index
-    if params[:search].present?
-      @books = Book.with_title(params[:search])
-    else
-      @books = Book.with_title("")
-    end
-  end
+  # def index
+  #   if params[:search].present?
+  #     @books = Book.with_title(params[:search])
+  #   else
+  #     @books = Book.with_title("")
+  #   end
+  # end
 
   def new
   end

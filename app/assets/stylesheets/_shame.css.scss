@@ -1,7 +1,24 @@
+// Navbar
+.navbar-brand img {
+  height: 32px;
+  width: 32px;
+  margin-top: -7px;
+}
+
+.navbar-form {
+  margin-left: -15px !important;
+}
+
+#global-search {
+  width: 250px;
+}
+
+// Login / Sign up page
 .rmarg10 {
   margin-right: 10px;
 }
 
+// Book results
 .flex-row {
   display: flex;
   flex-direction: row;
