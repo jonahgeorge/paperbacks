@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :listings
 
-  scope :with_name, ->(name) {
+  scope :where_name_like, ->(name) {
     where('name LIKE ?', "%#{name}%")
   }
 
