@@ -20,13 +20,8 @@ env:
 
 deploy:
   provider: heroku
-  master: paperbacks 
+  master: paperbacks
   run:
   - "rake db:migrate"
   api_key:
     secure: CEU7dWldr/FlSOnT0ta5BglntzB3hlNVtVwNGnOdHWNS5mOLbhbFwpYK846xINElnPC4s8bZ/XZzsmM6euYZ5O/Z83iRJal8s6Vr7LWg6T1+HSdVL7qO42tLMTKl3eQJXObwo2E4wkOxq9lfYfTts+GEBpAAk5PEig7PkOTm6qE=
-
-addons:
-  code_climate:
-    repo_token: 913b7d25dd708b4742b6aa5467eb7f65550bd9a56289f1791cd0e5efb4fd0294
-

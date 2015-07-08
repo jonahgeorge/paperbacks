@@ -18,7 +18,6 @@ group :production do
 end
 
 group :development, :test do
-  gem 'codeclimate-test-reporter', require: nil
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
