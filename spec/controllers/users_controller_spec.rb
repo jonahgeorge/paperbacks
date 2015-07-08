@@ -14,39 +14,6 @@ describe UsersController, :type => :controller do
     end
   end
 
-  # TODO Turn these into Capybara tests
-  #
-  # describe "POST #create" do
-  #   describe "when a user enters a blank preferred name" do
-  #     it "sets flash message and re-renders :new" do
-  #       post :create, user: { email: "jonah@paperbacks.io", password: "keyboardcat" }
-  #       expect(response).to be_success
-  #       expect(response).to render_template("new")
-  #     end
-  #   end
-  #   describe "when a user enters a blank email" do
-  #     it "sets flash message and re-renders :new" do
-  #       post :create, user: { name: "Jonah", password: "keyboardcat" }
-  #       expect(response).to be_success
-  #       expect(response).to render_template("new")
-  #     end
-  #   end
-  #   describe "when a user enters a blank password" do
-  #     it "sets flash message and re-renders :new" do
-  #       post :create, user: { name: "Jonah", email: "jonah@paperbacks.io" }
-  #       expect(response).to be_success
-  #       expect(response).to render_template("new")
-  #     end
-  #   end
-  #   describe "when a valid user signup occurs" do
-  #     it "sets flash and redirects to /" do
-  #       post :create, user: { name: 'Jonah', email: "jonah@paperbacks.io", password: "keyboardcat" }
-  #       expect(response).to be_success
-  #       expect(response).to redirect_to(root_path)
-  #     end
-  #   end
-  # end
-
   describe "GET #show" do
     it "responds successfully with an HTTP 200 status code" do
       user = FactoryGirl.create(:user)

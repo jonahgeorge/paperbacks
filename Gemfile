@@ -20,6 +20,8 @@ end
 group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'dotenv-rails'
 end
