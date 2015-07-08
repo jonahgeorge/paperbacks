@@ -1,0 +1,21 @@
+<div class='col-sm-6 col-sm-offset-3'>
+  <%= form_tag '/create_listing/add_book', :role => "search", :method => "get" do %>
+    <div class="form-group">
+      <input type="text" name="title" class="form-control"
+        placeholder="Find your book" value="<%= params[:title] %>">
+    </div>
+  <% end %>
+</div>
+
+<div class='flex-row'>
+  <% @books.each do |book| %>
+    <%= form_tag wizard_path, method: :put, class: 'flex-item' do %>
+      <input type="hidden" value="<%= current_user.id %>" name="listing[user_id]" %>
+      <input type="hidden" value="<%= book.id %>" name="listing[book_id]" %>
+      <a href="#" type='submit'>
+        <img class='artwork' src='http://placehold.it/100x150'>
+        <p class='title'><%= book.title %></p>
+      </a>
+    <% end %>
+  <% end %>
+</div>

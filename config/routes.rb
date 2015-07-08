@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :books
   resources :listings, except: [:index]
   resources :users, only: [:show]
+  resources :create_listing
 end
