@@ -1,9 +1,9 @@
-<div class='flex-container'>
-<% @books.each do |book| %>
-  <%= link_to book, class: 'flex-thing' do %>
-    <img class='artwork' src='http://placehold.it/100x150'>
-    <p class='title'><%= book.title %></p>
+<div class='flex-grid'>
+  <% @books.each do |book| %>
+    <%= link_to book, class: 'flex-grid-item' do %>
+      <img class='artwork' src='http://placehold.it/100x150'>
+      <p class='title'><%= book.title %></p>
+    <% end %>
   <% end %>
-<% end %>
 </div>
 

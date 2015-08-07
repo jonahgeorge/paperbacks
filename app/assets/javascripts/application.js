@@ -17,4 +17,3 @@
 //= require_tree .
 
 $("#listing_book_id").select2();
-

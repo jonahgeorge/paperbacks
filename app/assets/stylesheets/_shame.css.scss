@@ -17,33 +17,3 @@
 .rmarg10 {
   margin-right: 10px;
 }
-
-// Book results
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  overflow: auto;
-}
-
-.flex-item {
-  flex: 0 0 100px;
-  margin: 0px 10px;
-  color: #333333;
-}
-.flex-item:hover {
-  color: #333333;
-}
-.flex-item .artwork {
-  margin-bottom: 5px;
-}
-.flex-item .title {
-  font-size: 0.85em;
-}
-
-.flex-item:first-child {
-  margin-left: 0;
-}
-.flex-item:last-child {
-  margin-right: 0;
-}
