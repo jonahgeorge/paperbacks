@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
 
   resources :books, only: [:index, :show]
-  resources :listings, only: [:index]
+  resources :listings, only: [:index, :new]
   resources :users, only: [:show]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe HomeController do
+describe PagesController do
 
   describe "GET index" do
     it "renders the index template" do
