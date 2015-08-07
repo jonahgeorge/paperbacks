@@ -1,25 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
+<div class="row">
 
-      <form action="/listings" method="GET">
-        <input type="text" class="form-control" name="search" placeholder="Search by Title" value="<%= params[:search] %>">
-      </form>
+<div class="col-sm-12">
+  <h3>Showing results for '<%= params[:q] %>'</h3>
+  <hr>
+</div>
 
-      <hr>
+<div class="col-sm-9">
+  <h4>Listings</h4>
+  <%= render "shared/listings" %>
+</div>
 
-      <div class="list-group">
-      <% @books.each do |book| %>
-        <% book.active_listings.each do |listing| %>
-          <%= link_to listing, class: "list-group-item listings-wrapper" do %>
-            <%= content_tag :div, listing.book.title, class: "title" %>
-            <%= content_tag :div, number_to_currency(listing.price, :unit => "$"), class: "price" %>
-            <%= content_tag :div, listing.user.name,  class: "seller" %>
-          <% end %>
-        <% end %>
-      <% end %>
-      </div>
+<div class="col-sm-3">
+  <ul class="nav nav-pills nav-stacked">
+    <li><%= link_to "All", search_path(utf8: params[:utf8], q: params[:q]) %></li>
+    <li><%= link_to "Listings", listings_path(utf8: params[:utf8], q: params[:q]) %></li>
+    <li><%= link_to "Books", books_path(utf8: params[:utf8], q: params[:q]) %></li>
+  </ul>
+</div>
 
-    </div>
-  </div>
 </div>

@@ -1,6 +1,5 @@
 <table class='table'>
   <thead>
-    <th></th>
     <th>Book</th>
     <% unless defined? hide_seller and hide_seller %>
       <th>Seller</th>
@@ -9,9 +8,8 @@
     <th>Price</th>
   </thead>
   <tbody>
-    <% @listings.each_with_index do |listing, index| %>
+    <% @listings.each do |listing| %>
       <tr>
-        <td><%= index+1 %></td>
         <td><%= link_to listing.book.title, listing.book %></td>
         <% unless defined? hide_seller and hide_seller %>
           <td><%= link_to listing.user.name, listing.user %></td>
@@ -26,26 +24,3 @@
     <% end %>
   </tbody>
 </table>
-
-<% if false %>
-  <!--
-  Placeholder for advanced functionality in button dropdown
-  Report listing / Add to wishlist / etc
-  -->
-  <div class='btn-group'>
-    <%= mail_to listing.user.email, :class => 'btn btn-default btn-xs', :type => 'button' do %>
-      <%= number_to_currency(listing.price) %>
-    <% end %>
-    <button type='button' class='btn btn-default btn-xs dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-      <span class='caret'></span>
-      <span class='sr-only'>Toggle Dropdown</span>
-    </button>
-    <ul class='dropdown-menu'>
-      <li><a href='#'>Action</a></li>
-      <li><a href='#'>Another action</a></li>
-      <li><a href='#'>Something else here</a></li>
-      <li role='separator' class='divider'></li>
-      <li><a href='#'>Separated link</a></li>
-    </ul>
-  </div>
-<% end %>
