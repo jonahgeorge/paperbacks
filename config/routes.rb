@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root to: "home#index"
+  root to: "pages#index"
+  get "/search" => "search#index"
 
   get "/confirm" => "email_confirmation#show"
   get "/signup" => "users#new"
@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
 
-  get "/search" => "search#index"
-
-  resources :books
-  resources :listings
+  resources :books, only: [:index, :show]
+  resources :listings, only: [:index]
   resources :users, only: [:show]
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end

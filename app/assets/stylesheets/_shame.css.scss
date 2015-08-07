@@ -1,19 +1,22 @@
-// Navbar
+// == Navbar
+.navbar {
+  border-radius: 0;
+}
 .navbar-brand img {
   height: 32px;
   width: 32px;
   margin-top: -7px;
 }
-
 .navbar-form {
   margin-left: -15px !important;
 }
-
 #global-search {
   width: 250px;
 }
+// == Navbar
 
-// Login / Sign up page
+// == Utility
 .rmarg10 {
   margin-right: 10px;
 }
+// == Utility
