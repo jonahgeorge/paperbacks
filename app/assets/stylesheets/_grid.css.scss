@@ -1,0 +1,23 @@
+.flex-container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  // justify-content: space-around;
+}
+
+.flex-thing {
+  // text-align: center;
+  flex: 0 0 100px;
+  margin-right: 15px;
+  color: #333333;
+}
+.flex-thing:hover {
+  color: #333333;
+}
+.flex-thing .artwork {
+  margin-bottom: 5px;
+}
+.flex-thing .title {
+  font-size: 0.85em;
+}

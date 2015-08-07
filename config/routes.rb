@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
+
   get "/search" => "search#index"
 
   resources :books
-  resources :listings, except: [:index]
+  resources :listings
   resources :users, only: [:show]
-  resources :create_listing
 end
