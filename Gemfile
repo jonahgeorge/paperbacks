@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'possessive'
 gem "select2-rails"
+gem "rails_admin"
 
 group :production do
   gem 'passenger'
