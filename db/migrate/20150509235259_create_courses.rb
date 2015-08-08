@@ -1,9 +1,9 @@
 class CreateCourses < ActiveRecord::Migration
   def change
-    create_table :courses, primary_key: false do |t|
-      t.string :id
+    create_table :courses do |t|
       t.string :name
-      t.string :department_id
+      t.references :department, index: true
+
       t.timestamps
     end
   end

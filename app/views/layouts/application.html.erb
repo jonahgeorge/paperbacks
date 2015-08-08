@@ -37,13 +37,16 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-              <% if logged_in? %>
+              <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                  <li><%= link_to "Dashboard", rails_admin.dashboard_path %></li>
+                <% end %>
                 <li><%= link_to "New Listing", new_listing_path %></li>
                 <!-- <li><%= link_to "My Account", nil %></li> -->
-                <li><%= link_to "Log Out", logout_path %></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
               <% else %>
-                <li><%= link_to "Sign Up", signup_path %></li>
-                <li><%= link_to "Log In", login_path %></li>
+                <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                <li><%= link_to "Log In", new_user_session_path %></li>
               <% end %>
             </ul>
           </div>

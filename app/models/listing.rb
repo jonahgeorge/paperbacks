@@ -7,11 +7,15 @@ class Listing < ActiveRecord::Base
   validates_presence_of :price
   validates_numericality_of :price, greater_than_or_equal_to: 0
 
-  scope :where_title_like, ->(title) {
+  def self.by_title(title)
     joins(:book).where('LOWER(title) LIKE LOWER(?)', "%#{title}%")
-  }
+  end
 
-  scope :where_active, -> {
-    where(is_active: true)
-  }
+  def self.active
+    where(active: true)
+  end
+
+  def self.inactive
+    where(active: false)
+  end
 end

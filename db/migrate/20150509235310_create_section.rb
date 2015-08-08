@@ -1,10 +1,10 @@
 class CreateSection < ActiveRecord::Migration
   def change
-    create_table :sections, primary_key: false do |t|
-      t.string :id
+    create_table :sections do |t|
       t.string :name
       t.string :instructor
-      t.string :course_id
+      t.references :course, index: true
+
       t.timestamps
     end
   end

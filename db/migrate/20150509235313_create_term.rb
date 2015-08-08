@@ -1,8 +1,8 @@
 class CreateTerm < ActiveRecord::Migration
   def change
-    create_table :terms, primary_key: false do |t|
-      t.string :id
+    create_table :terms do |t|
       t.string :name
+
       t.timestamps
     end
   end

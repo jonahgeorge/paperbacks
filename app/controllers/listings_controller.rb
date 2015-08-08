@@ -1,16 +1,18 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
-    @listings = Listing.where_title_like(params[:q])
+    @listings = Listing.by_title(params[:q]).active
   end
 
   def new
-    @books = Book.where(nil)
     @listing = Listing.new
   end
 
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
+    @listing.active = true
 
     if @listing.save
       redirect_to listings_path
@@ -18,18 +20,6 @@ class ListingsController < ApplicationController
       render "new"
     end
   end
-
-  # def show
-  # end
-
-  # def edit
-  # end
-
-  # def update
-  # end
-
-  # def destroy
-  # end
 
   private
 

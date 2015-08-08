@@ -1,9 +1,9 @@
 class CreateDepartments < ActiveRecord::Migration
   def change
-    create_table :departments, primary_key: false do |t|
-      t.string :id
+    create_table :departments do |t|
       t.string :name
-      t.string :term_id
+      t.references :term, index: true
+
       t.timestamps
     end
   end

@@ -6,15 +6,7 @@ class Book < ActiveRecord::Base
   belongs_to :section
   has_many :listings
 
-  scope :where_title_like, ->(title) {
+  def self.by_title(title)
     where('LOWER(title) LIKE LOWER(?)', "%#{title}%")
-  }
-
-  def active_listings
-    self.listings.where(is_active: true)
-  end
-
-  def inactive_listings
-    self.listings.where(is_active: false)
   end
 end

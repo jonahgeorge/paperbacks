@@ -20,6 +20,6 @@ FactoryGirl.define do
     book { create(:book) }
     user { create(:user) }
     price 50.00
-    is_active true
+    active true
   end
 end

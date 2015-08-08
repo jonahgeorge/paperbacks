@@ -1,8 +1,0 @@
-<p>Hey <%= @user.name %>, please verify your email address!</p>
-
-<p>
-  Someone (hopefully you) has used this email at Paperbacks.
-  Please click the link below to verify your ownership of this email.
-</p>
-
-<%= link_to confirm_path(token: @user.token), confirm_path(token: @user.token) %>

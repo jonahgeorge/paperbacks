@@ -11,8 +11,9 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'possessive'
-gem "select2-rails"
-gem "rails_admin"
+gem 'select2-rails'
+gem 'rails_admin'
+gem 'devise'
 
 group :production do
   gem 'passenger'
@@ -27,5 +28,4 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'spring'
   gem 'bullet'
-  gem 'quiet_assets'
 end
