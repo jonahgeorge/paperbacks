@@ -7,6 +7,7 @@ rvm:
 
 before_script:
 - psql -c 'create database paperbacks_test;' -U postgres
+- cp .sample.env .env
 
 script:
 - bundle exec rake db:schema:load
@@ -15,10 +16,6 @@ script:
 after_failure:
 - echo $RAILS_ENV
 - bundle exec rake --version
-
-env:
-- DATABASE_URL="postgres://postgres:@localhost/paperbacks_test"
-- APP_DOMAIN=localhost:3000
 
 deploy:
   provider: heroku
