@@ -1,7 +1,7 @@
 <div class='flex-row'>
   <% @books.each do |book| %>
     <%= link_to book, class: 'flex-row-item' do %>
-      <img class='artwork' src='http://placehold.it/100x150'>
+      <img class='artwork' src='<%= book.image %>' height=150 width=100>
       <p class='title'><%= book.title %></p>
     <% end %>
   <% end %>

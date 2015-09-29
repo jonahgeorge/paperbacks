@@ -1,12 +1,13 @@
 <div class="row">
-<div class='col-sm-3'>
-  <img class="img-responsive hidden-xs" src="http://placehold.it/200x300">
-  <h4><%= @book.title %></h4>
-  <p><%= @book.author %></p>
-</div>
+  <div class='col-sm-3'>
+    <img class="img-responsive hidden-xs" src="<%= @book.image %>">
+    <h4><%= @book.title %></h4>
+    <p><%= @book.author %></p>
+    <p><%= @book.isbn %></p>
+  </div>
 
-<div class='col-sm-9'>
-  <h4>Listings</h4>
-  <%= render "shared/listings" %>
-</div>
+  <div class='col-sm-9'>
+    <h4>Listings</h4>
+    <%= render "shared/listings" %>
+  </div>
 </div>
