@@ -16,9 +16,9 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
-  config.authorize_with do
-    redirect_to main_app.root_path unless current_user.try(:admin?)
-  end
+  # config.authorize_with do
+  #   redirect_to main_app.root_path unless current_user.try(:admin?)
+  # end
 
   config.actions do
     dashboard                     # mandatory
