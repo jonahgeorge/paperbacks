@@ -16,6 +16,15 @@ gem 'select2-rails'
 gem 'rails_admin'
 gem 'devise'
 
+# Book specific stuff
+gem 'osu-ctl-scraper', \
+  :git => 'https://github.com/jonahgeorge/osu-ctl-scraper.git',
+  :branch => 'master'
+gem 'amazon_isbn', \
+  :git => 'https://github.com/jonahgeorge/amazon-isbn.git',
+  :branch => 'master'
+gem 'isbndb'
+
 group :production do
   gem 'passenger'
   gem 'rails_12factor'
